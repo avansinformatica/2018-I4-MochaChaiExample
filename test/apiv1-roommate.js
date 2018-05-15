@@ -7,7 +7,17 @@ chai.use(chaiHttp);
 
 describe('V1 Roommate', () => {
 
+    before(function(){
+        //
+        // Get JWT token, ophalen door POST? Of testtoken?
+        //
+        global.token = 'eyJhbGciOiJI....u5CSpyHI';
+    });
+
     it('GET /apiv1/roommate', (done) => {
+
+        console.log('Token: ' + global.token);
+
         chai.request(server)
             .get('/apiv1/roommate')
             .end( (err, res) => {
