@@ -24,8 +24,8 @@ describe('V1 Roommate', () => {
                 res.should.have.status(200);
                 res.body.should.be.a('array');
                 res.body.should.be.length(5);
+                done();
             });
-        done()
     });
 
     it('GET /apiv1/roommate/linda', (done) => {
@@ -36,8 +36,8 @@ describe('V1 Roommate', () => {
                 res.body.should.be.a('object');
                 res.body.should.have.property('name');
                 res.body.should.have.property('cooking skills');
+                done();
             });
-        done()
     });
 
     it('GET /apiv1/blaba', (done) => {
@@ -46,8 +46,8 @@ describe('V1 Roommate', () => {
             .end( (err, res) => {
                 res.should.have.status(500);
                 res.body.should.be.a('object');
+                done();
             });
-        done()
     });
 
 });
